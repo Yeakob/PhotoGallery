@@ -1,0 +1,193 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  z-index: 10;
+  top: 15px;
+  left: 20px;
+  height: 25%;
+  width: 25%;
+  background-color: white;
+  border: solid 1px gray;
+  border-radius: 5px;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checkboxContainer{
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  font-size: 22px;
+  top: -8px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+}
+
+.checkmarkIcon {
+  position: absolute;
+  z-index: 10;
+  top: 15px;
+  left: 20px;
+  height: 25%;
+  width: 25%;
+  background-color: white;
+  border: solid 1px gray;
+  border-radius: 5px;
+}
+
+.checkboxContainer .checkmarkIcon {
+  background-color: #2196F3;
+}
+
+.checkmarkIcon:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer .checkmarkIcon:after {
+  display: block;
+}
+
+.checkboxContainer .checkmarkIcon:after {
+  left: 7px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.animation {
+  animation-name: animationGrow;
+  animation-duration: .3s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes animationGrow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.sortable-ghost > div {
+  visibility: hidden !important;
+  border: 1px solid red;
+}
+
+.sortable-drag {
+  visibility: visible !important;
+  border: 1px solid red;
+}
+
+.dragged-item {
+  border: 2px solid blue !important;
+}
+
+.biggerDrag {
+  width: 200%;
+  height: 200%;
+}
+
+.sortableContainer div:first-child {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+}
